@@ -4,6 +4,7 @@ import Layout from "./../components/Layout/Layout";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Spinner from "../components/Spinner";
 import { AiOutlineFileAdd } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const CreateListing = () => {
   const [loading, setLoading] = useState(false);
@@ -89,9 +90,33 @@ const CreateListing = () => {
   };
 
   //form submit
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
+    if (discountedPrice >= regularPrice) {
+      setLoading(false);
+      toast.error("Discount Price should be less than Regular Price");
+      return;
+    }
+    if (images > 6) {
+      setLoading(false);
+      toast.error("Max 6 Images can be selected");
+      return;
+    }
+    let geoLocation = {};
+    let location;
+    if (geoLoactionEnable) {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCcdggkOmLBbc0uo93LdD7VCv2npMpUy8Y`
+      );
+      const data = await response.json();
+      console.log(data);
+    } else {
+      geoLocation.lat = latitude;
+      geoLocation.lng = longitude;
+      location = address;
+    }
+    setLoading(false);
   };
   return (
     <Layout>
