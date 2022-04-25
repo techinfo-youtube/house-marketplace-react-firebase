@@ -1,1 +1,41 @@
+/* // image container for category */
+.Imagecontainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .Imagecontainer img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .Imagecontainer .btn {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+   
+    text-align: center;
+  }
+  
+  .Imagecontainer .btn:hover {
+    background-color: black;
+  }
+  
 
+
+/* // image container for category */
+
+.category-link a{
+  text-decoration: none !important;
+  color: black;
+  line-height: normal;
+}

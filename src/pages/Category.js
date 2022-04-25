@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../components/Layout/Layout";
-
+import { useParams } from "react-router-dom";
 import { db } from "./../firebase.config";
 import { toast } from "react-toastify";
 import {
@@ -15,9 +15,10 @@ import {
 import Spinner from "../components/Spinner";
 import ListingItem from "../components/ListingItem";
 
-const Offers = () => {
+const Category = () => {
   const [listing, setListing] = useState("");
   const [loading, setLoading] = useState(true);
+  const params = useParams();
 
   //fetch listing
   useEffect(() => {
@@ -28,7 +29,7 @@ const Offers = () => {
         //query
         const q = query(
           listingsRef,
-          where("offer", "==", true),
+          where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
           limit(10)
         );
@@ -50,11 +51,15 @@ const Offers = () => {
     };
     //func call
     fetchListing();
-  }, []);
+  }, [params.categoryName]);
   return (
     <Layout>
       <div className="mt-3 container-fluid">
-        <h1>Best Offers</h1>
+        <h1>
+          {params.categoryName === "rent"
+            ? "Places For Rent"
+            : "Plces For Sale"}
+        </h1>
         {loading ? (
           <Spinner />
         ) : listing && listing.length > 0 ? (
@@ -66,11 +71,11 @@ const Offers = () => {
             </div>
           </>
         ) : (
-          <p>There Are No Current Offers </p>
+          <p>No Listing For {params.categoryName} </p>
         )}
       </div>
     </Layout>
   );
 };
 
-export default Offers;
+export default Category;
