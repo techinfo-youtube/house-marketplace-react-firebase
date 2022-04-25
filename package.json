@@ -13,6 +13,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-toastify": "^8.2.0",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
