@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.navbar {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+    background-color: #470D21 !important;
+}
+.navbar .navbar-brand{
+    color: white !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar .navbar-toggler-icon{
+ color: white !important;
+}
+.navbar button:focus{
+ color: white !important;
+}
+.navbar .nav-link{
+    color: #D67D3E !important;
+}
+
+.navbar .nav-item a:hover{
+    border-radius: 10px/30px;
+    color: #9C0F48 !important;
+    background: rgb(249,228,212);
+background: linear-gradient(90deg, rgba(249,228,212,1) 0%, rgba(214,125,62,1) 100%);
+    /* background-color: #F9E4D4 !important ; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px !important; 
+}
+.navbar .active{
+    border-radius: 10px/30px;
+    background-color: #F9E4D4 !important ;
+    color: #9C0F48 !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px !important; 
+}

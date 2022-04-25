@@ -1,0 +1,33 @@
+.listing-container {
+  margin: 60px 0px;
+}
+.listing-container-col1 img {
+  width: 100%;
+  height: 400px;
+}
+
+.listing-container-col2 {
+  border-left: 5px solid #470d21;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.listing-container-col2 h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .listing-container {
+    margin-top: 10px;
+    padding: 0x;
+  }
+  .listing-container-col2 {
+    border-left: none;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+}

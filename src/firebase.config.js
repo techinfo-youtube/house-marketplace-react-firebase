@@ -4,7 +4,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
- // addd your key and configuration details
+  apiKey: "AIzaSyCTR0NbKvl-BkRSh_7fpjqU2vusBLl1078",
+  authDomain: "house-market-e61c9.firebaseapp.com",
+  projectId: "house-market-e61c9",
+  storageBucket: "house-market-e61c9.appspot.com",
+  messagingSenderId: "142403101495",
+  appId: "1:142403101495:web:286244ccbe5b75900e30b2",
 };
 
 // Initialize Firebase

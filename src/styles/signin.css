@@ -1,0 +1,56 @@
+.signin-container {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px !important;
+}
+
+.signin-container img {
+  height: 400px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.signin-container-col2 {
+  background-color: rgba(250, 235, 215, 0.464);
+  padding: 40px;
+  padding-top: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.signin-container-col2 h4 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3rem;
+}
+.signin-container-col2 input:focus {
+  outline: 1px solid #470d21 !important;
+  box-shadow: none !important;
+  color: #470d21;
+}
+
+.signinbutton {
+  background-color: #470d21;
+  color: white;
+  width: 200px !important;
+}
+.signinbutton:hover {
+  background-color: #b12556;
+  color: white;
+}
+
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .new-user {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .show-pass-forgot {
+    font-size: 10px;
+  }
+  .signin-container img {
+    height: 200px;
+    width: 100%;
+  }
+  .signinbutton {
+    width: 260px !important;
+  }
+}

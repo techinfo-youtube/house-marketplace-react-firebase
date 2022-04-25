@@ -1,0 +1,46 @@
+.signup-container {
+  margin: 0px;
+  margin-top: 20px;
+  padding: 20px;
+}
+.signup-container-col-1 img {
+  height: 600px;
+  width: 100%;
+}
+
+.signup-container-col-2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px !important;
+  padding: 0px 40px;
+  margin-bottom: 100px !important;
+}
+.signup-container-col-2 h3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin-top: 30px !important;
+}
+.signup-container-col-2 .signup-button {
+  background-color: #3f3d56;
+  color: white;
+  width: 250px;
+}
+.signup-container-col-2 .signup-button:hover {
+  background-color: #470d21;
+  color: white;
+  border-radius: 5px;
+}
+
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signup-container-col-1 img {
+    height: 200px;
+    width: 100%;
+  }
+  .signup-container-col-2 .signup-button {
+    margin-bottom: 10px;
+  }
+  .signup-container-col-2 span {
+    margin-left: 0px !important;
+  }
+}

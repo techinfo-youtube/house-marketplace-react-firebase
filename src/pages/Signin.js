@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { BsFillEyeFill } from "react-icons/bs";
 import Layout from "./../components/Layout/Layout";
 import OAuth from "../components/OAuth";
+import "../styles/signin.css";
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -42,55 +43,64 @@ const Signin = () => {
     }
   };
   return (
-    <Layout>
-      <div className="d-flex  align-items-center justify-content-center w-100 mt-4">
-        <form className="bg-light p-4" onSubmit={loginHandler}>
-          <h4 className="bg-dark p-2 mt-2 text-light text-center">Sign In</h4>
-
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={onChange}
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
-            </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={onChange}
-              className="form-control"
-              id="password"
-            />
-            <span>
-              show password
-              <BsFillEyeFill
-                className="text-danger ms-2"
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setShowPassword((prevState) => !prevState);
-                }}
+    <Layout title="signin - house marketplace">
+      <div className="row m-4 signin-container ">
+        <div className="col-md-6">
+          <img src="./assets/loginpage.svg" alt="login" />
+        </div>
+        <div className="col-md-6 signin-container-col2">
+          <form onSubmit={loginHandler}>
+            <h4 className=" text-center">Sign In</h4>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Email address
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={onChange}
+                className="form-control"
+                id="email"
+                aria-describedby="emailHelp"
               />
-            </span>{" "}
-            <Link to="/forgot-password">forgot Password</Link>
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Sign in
-          </button>
-          <OAuth />
-          <div className="mt-2">
-            <span>New User</span> <Link to="/signup">Sign up</Link>
-          </div>
-        </form>
+            </div>
+            <div className="mb-2 ">
+              <label htmlFor="exampleInputPassword1" className="form-label">
+                Password
+              </label>
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={onChange}
+                className="form-control"
+                id="password"
+              />
+            </div>
+            <div className="mb-3 show-pass-forgot">
+              <span>
+                <BsFillEyeFill
+                  className="text-danger ms-2 "
+                  size={25}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setShowPassword((prevState) => !prevState);
+                  }}
+                />{" "}
+                show password
+              </span>{" "}
+              |
+              <Link to="/forgot-password" className="ms-4">
+                forgot Password
+              </Link>
+            </div>
+            <button type="submit" className="btn signinbutton">
+              Sign in
+            </button>
+            <span className="ms-4 new-user"> New User</span>{" "}
+            <Link to="/signup">Sign up !</Link>
+            <OAuth />
+          </form>
+        </div>
       </div>
     </Layout>
   );

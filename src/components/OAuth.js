@@ -33,12 +33,23 @@ const OAuth = () => {
 
   return (
     <div>
-      <h6 className="mt-2">
-        Sign {location.pathname === "/signup" ? "Up" : "in"} With &nbsp;
-        <button onClick={onGoolgleAuthHandler}>
-          <FcGoogle />
+      <h3 className="mt-4 text-center ">
+        Sign {location.pathname === "/signup" ? "Up" : "in"} With
+        <button
+          onClick={onGoolgleAuthHandler}
+          style={{
+            outline: "none",
+            backgroundColor: "transparent",
+            border: "none",
+            borderBottom: "1px solid black",
+          }}
+        >
+          <span>
+            <FcGoogle />
+            oogle
+          </span>
         </button>
-      </h6>
+      </h3>
     </div>
   );
 };

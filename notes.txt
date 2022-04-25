@@ -1,4 +1,11 @@
+color pallate:
+dark : #470D21
+dark-light: #9C0F48
+orange: #D67D3E
+light: #F9E4D4
 
+userid = eUL55G8bzbOdnIj51zNc87elGlm2
+geocode-api = AIzaSyCcdggkOmLBbc0uo93LdD7VCv2npMpUy8Y
 
 // FIRESTORE RULES
 

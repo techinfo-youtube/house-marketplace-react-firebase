@@ -14,8 +14,8 @@ import {
 } from "firebase/storage";
 import { db } from "../firebase.config";
 import {
-  addDoc,
-  collection,
+  addDoc, // eslint-disable-line
+  collection, // eslint-disable-line
   serverTimestamp,
   doc,
   updateDoc,
@@ -26,7 +26,7 @@ const EditListing = () => {
   const [loading, setLoading] = useState(false);
   const [listing, setLisitng] = useState(null);
   const params = useParams();
-  const [geoLoactionEnable, setGeoLocationEnable] = useState(false);
+  const [geoLoactionEnable, setGeoLocationEnable] = useState(false); // eslint-disable-line
   const [formData, setFormData] = useState({
     type: "rent",
     name: "",
@@ -48,8 +48,9 @@ const EditListing = () => {
     name,
     bedrooms,
     bathrooms,
-    parking,
-    furnished,
+
+    parking, // eslint-disable-line
+    furnished, // eslint-disable-line
     address,
     offer,
     regularPrice,
@@ -147,12 +148,12 @@ const EditListing = () => {
       return;
     }
     let geoLocation = {};
-    let location;
+    let location; // eslint-disable-line
     if (geoLoactionEnable) {
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyCcdggkOmLBbc0uo93LdD7VCv2npMpUy8Y`
       );
-      const data = await response.json();
+      const data = await response.json(); // eslint-disable-line
     } else {
       geoLocation.lat = latitude;
       geoLocation.lng = longitude;

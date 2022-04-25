@@ -1,0 +1,56 @@
+.profile-container {
+  margin: 0px !important;
+  margin-top: 60px !important;
+}
+
+.profile-container-col1 img {
+  width: 100%;
+  height: 400px;
+}
+
+.profile-container-col2 h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+.profile-container-col2 h3 {
+  margin-bottom: 50px !important;
+}
+.your-listings {
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.your-listings h3 {
+  margin-top: 80px !important;
+  font-weight: 700;
+  font-family: cursive;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .profile-container-col1 img {
+    width: 100%;
+    height: 200px;
+  }
+  .create-listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .your-listings h3 {
+    margin-top: 0px !important;
+  }
+}

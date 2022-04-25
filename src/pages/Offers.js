@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../components/Layout/Layout";
-
+import { IoReloadCircle } from "react-icons/io5";
+import "../styles/offers.css";
 import { db } from "./../firebase.config";
 import { toast } from "react-toastify";
 import {
@@ -87,9 +88,17 @@ const Offers = () => {
     }
   };
   return (
-    <Layout>
-      <div className="mt-3 container-fluid">
-        <h1>Best Offers</h1>
+    <Layout title="best offer on house">
+      <div className="offers pt-3 container-fluid">
+        <h1>
+          {" "}
+          <img
+            src="/assets/offer.png"
+            alt="offers"
+            className="offer-img"
+          />{" "}
+          Best Offers
+        </h1>
         {loading ? (
           <Spinner />
         ) : listing && listing.length > 0 ? (
@@ -103,16 +112,13 @@ const Offers = () => {
         ) : (
           <p>There Are No Current Offers </p>
         )}
-      </div>
-      <div className="d-flex align-items-center justify-content-center mb-4 mt-4">
-        {lastFetchListing && (
-          <button
-            className="btn btn-primary text-center"
-            onClick={fetchLoadMoreListing}
-          >
-            load more
-          </button>
-        )}
+        <div className="d-flex align-items-center justify-content-center pb-4 mt-4">
+          {lastFetchListing && (
+            <button className="load-btn" onClick={fetchLoadMoreListing}>
+              <IoReloadCircle /> load more
+            </button>
+          )}
+        </div>
       </div>
     </Layout>
   );

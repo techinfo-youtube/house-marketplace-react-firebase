@@ -1,0 +1,42 @@
+.item-card {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.386);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px !important;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.item-card:hover {
+  background-color: rgba(255, 105, 180, 0.213);
+}
+
+.item-card-continer1 {
+  border-right: 5px solid #470d21;
+}
+.item-card-continer1 img {
+  height: 200px;
+  width: 100%;
+  border: 5px solid rgba(0, 0, 0, 0.173);
+}
+.item-card-continer2 {
+  margin-top: 10px;
+}
+.item-card-continer2 h2 {
+  font-weight: 600;
+}
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .item-card-continer1 {
+    border-right: none;
+  }
+  .item-card {
+    padding: 0px;
+  }
+  .card-item-parent {
+    margin: 0px -40px;
+  }
+  .item-card-continer2 {
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+}

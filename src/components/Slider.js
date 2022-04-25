@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { ImLocation2 } from "react-icons/im";
 import { db } from "../firebase.config";
+import "../styles/slider.css";
 import {
   collection,
   getDoc,
@@ -50,7 +52,7 @@ const Slider = () => {
   }
   return (
     <>
-      <div className="container-fluid">
+      <div style={{ width: "100%" }}>
         {listings === null ? (
           <Spinner />
         ) : (
@@ -76,16 +78,20 @@ const Slider = () => {
                   navigat(`/category/${data.type}/${id}`);
                 }}
               >
-                <h6 className="bg-info text-light p-2 m-0 ">
-                  <img alt="user pic" src={userPic} height={35} width={35} />
-                  <span className="ms-2"> {data.name}</span>
-                </h6>
                 <img
                   src={data.imgUrls[0]}
-                  height={400}
-                  width={1100}
                   alt={data.name}
+                  className="slider-img"
                 />
+                <h4 className=" text-light p-4 m-0 ">
+                  {/* <img alt="user pic" src={userPic} height={35} width={35} /> */}
+                  <ImLocation2 size={20} className="ms-2" /> Recently Added :{" "}
+                  <br />
+                  <span className="ms-4 mt-2"> {data.name}</span>
+                  <span className="ms-2">
+                    | Price ( $ {data.regularPrice} )
+                  </span>
+                </h4>
               </SwiperSlide>
             ))}
           </Swiper>

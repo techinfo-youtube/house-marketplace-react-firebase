@@ -1,0 +1,33 @@
+.home-cat {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  padding: 0;
+  margin: 0;
+  background: url("../../public/assets/back.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.home-cat h1 {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+/* media quer */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .home-cat h1 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .home-cat {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding: 0;
+    margin: 0;
+    background: url("../../public/assets/back.jpg") no-repeat;
+    background-size: 100% 50%;
+  }
+}

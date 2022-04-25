@@ -1,0 +1,50 @@
+.offers {
+  padding-bottom: 50px;
+  background: url("../../public/assets/offer-bg.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.offers h1 {
+  font-family: cursive;
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.offers .offer-img {
+  height: 70px;
+  width: 110px;
+}
+
+.load-btn {
+  background-color: #470d21 !important;
+  font-size: 1rem;
+  font-family: cursive;
+  padding: 5px 15px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.load-btn:hover {
+  color: #470d21 !important;
+  font-size: 1rem;
+  font-family: cursive;
+  padding: 5px 15px;
+  background-color: white !important;
+
+  border-radius: none;
+}
+
+/* media query */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .offers h1 {
+    font-family: cursive;
+    font-size: 2rem;
+    text-align: center;
+    margin: 30px 0px;
+  }
+  .offers .offer-img {
+    height: 70px;
+    width: 90px;
+  }
+}

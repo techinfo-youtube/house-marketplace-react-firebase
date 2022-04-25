@@ -1,0 +1,31 @@
+
+.slider-img{
+    width: 100% !important;
+    height: 75vh !important;
+
+}
+
+.mySwipe h4{
+    background-color: #F9E4D4 !important;
+    color: #470D21 !important;
+    font-size: 16px;
+    border-left: 30px solid #470D21;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .slider-img{
+        width: 100% !important;
+        height: 52vh !important;
+    }
+    .mySwipe h4{
+        background-color: #F9E4D4 !important;
+        color: #470D21 !important;
+        font-size: 14px;
+        padding-left: 0px !important;
+        padding-top: 10px !important;
+    }
+
+}
