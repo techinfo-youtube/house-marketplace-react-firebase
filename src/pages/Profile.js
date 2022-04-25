@@ -58,7 +58,7 @@ const Profile = () => {
   const logoutHandler = () => {
     auth.signOut();
     toast.success("Successfully Logout");
-    navigate("/");
+    navigate("/singin");
   };
 
   //onChange
@@ -96,6 +96,11 @@ const Profile = () => {
       setListings(updatedListings);
       toast.success("Listing Deleted Successfully");
     }
+  };
+
+  //edit handler
+  const onEdit = (listingId) => {
+    navigate(`/editlisting/${listingId}`);
   };
   return (
     <Layout>
@@ -172,6 +177,7 @@ const Profile = () => {
                   listing={listing.data}
                   id={listing.id}
                   onDelete={() => onDelete(listing.id)}
+                  onEdit={() => onEdit(listing.id)}
                 />
               ))}
             </div>

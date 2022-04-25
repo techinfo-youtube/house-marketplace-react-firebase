@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBed, FaBath } from "react-icons/fa";
-const ListingItem = ({ listing, id, onDelete }) => {
+const ListingItem = ({ listing, id, onDelete, onEdit }) => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center">
@@ -49,6 +49,14 @@ const ListingItem = ({ listing, id, onDelete }) => {
                 onClick={() => onDelete(listing.id)}
               >
                 Delete Listing
+              </button>
+            )}
+            {onEdit && (
+              <button
+                className="btn btn-info ms-3"
+                onClick={() => onEdit(listing.id)}
+              >
+                Edit Listing
               </button>
             )}
           </div>
