@@ -4,10 +4,10 @@ This project contain (Bootstrap | Firebase DB | React SEO)
 
 ## Thanks for watching techinfoyt 
 
-please like and subsribe to techinfoyt
-also you can support my work by UPI 
-UPI : techinfoyt@upi
-more links video discription
+- please like and subsribe to techinfoyt
+- also you can support my work by UPI 
+- UPI : techinfoyt@upi
+- more links video discription
 
 ## please note
 - this project contains multiple branches
