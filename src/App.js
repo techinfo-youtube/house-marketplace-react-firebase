@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import PrivateRoute from "./components/PrivateRoute";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/offers" element={<Offers />} />
       </Routes>
     </BrowserRouter>

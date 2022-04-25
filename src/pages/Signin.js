@@ -79,7 +79,8 @@ const Signin = () => {
                   setShowPassword((prevState) => !prevState);
                 }}
               />
-            </span>
+            </span>{" "}
+            <Link to="/forgot-password">forgot Password</Link>
           </div>
           <button type="submit" className="btn btn-primary">
             Sign in
