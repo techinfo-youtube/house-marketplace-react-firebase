@@ -17,6 +17,7 @@ import ListingItem from "../components/ListingItem";
 
 const Category = () => {
   const [listing, setListing] = useState("");
+  const [lastFetchListing, setLastFetchListing] = useState(null);
   const [loading, setLoading] = useState(true);
   const params = useParams();
 
@@ -31,11 +32,12 @@ const Category = () => {
           listingsRef,
           where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
-          limit(10)
+          limit(1)
         );
         //execute query
         const querySnap = await getDocs(q);
-
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+        setLastFetchListing(lastVisible);
         const listings = [];
         querySnap.forEach((doc) => {
           return listings.push({
@@ -53,6 +55,38 @@ const Category = () => {
     //func call
     fetchListing();
   }, [params.categoryName]);
+
+  //loadmore pagination func
+  const fetchLoadMoreListing = async () => {
+    try {
+      //refrence
+      const listingsRef = collection(db, "listings");
+      //query
+      const q = query(
+        listingsRef,
+        where("type", "==", params.categoryName),
+        orderBy("timestamp", "desc"),
+        startAfter(lastFetchListing),
+        limit(10)
+      );
+      //execute query
+      const querySnap = await getDocs(q);
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1];
+      setLastFetchListing(lastVisible);
+      const listings = [];
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        });
+      });
+      setListing((prevState) => [...prevState, ...listings]);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Unble to fetch data");
+    }
+  };
 
   return (
     <Layout>
@@ -74,6 +108,16 @@ const Category = () => {
           </>
         ) : (
           <p>No Listing For {params.categoryName} </p>
+        )}
+      </div>
+      <div className="d-flex align-items-center justify-content-center mb-4 mt-4">
+        {lastFetchListing && (
+          <button
+            className="btn btn-primary text-center"
+            onClick={fetchLoadMoreListing}
+          >
+            load more
+          </button>
         )}
       </div>
     </Layout>
