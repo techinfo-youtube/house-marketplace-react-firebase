@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Layout from "./../components/Layout/Layout";
+import { toast } from "react-toastify";
 import { BsFillEyeFill } from "react-icons/bs";
 import {
   getAuth,
@@ -42,10 +43,11 @@ const Signup = () => {
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
       await setDoc(doc(db, "users", user.uid), formDataCopy);
+      toast.success("Signup Successfully !");
       navigate("/");
-      alert("Signup SUccess");
     } catch (error) {
       console.log(error);
+      toast.error("Something Went Wrong");
     }
   };
   return (

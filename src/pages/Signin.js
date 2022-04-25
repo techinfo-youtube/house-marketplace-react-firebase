@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { BsFillEyeFill } from "react-icons/bs";
 import Layout from "./../components/Layout/Layout";
 
@@ -18,10 +20,30 @@ const Signin = () => {
       [e.target.id]: e.target.value,
     }));
   };
+
+  //loginHandler
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      if (userCredential.user) {
+        toast.success("Login Success");
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Invalid Email Or Password");
+    }
+  };
   return (
     <Layout>
       <div className="d-flex  align-items-center justify-content-center w-100 mt-4">
-        <form className="bg-light p-4">
+        <form className="bg-light p-4" onSubmit={loginHandler}>
           <h4 className="bg-dark p-2 mt-2 text-light text-center">Sign In</h4>
 
           <div className="mb-3">
