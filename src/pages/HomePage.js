@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Slider from "../components/Slider";
 import Layout from "./../components/Layout/Layout";
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
   return (
     <Layout>
       <div className="container mt-3">
+        <Slider />
         <div className="row">
           <h1>Category</h1>
           <div className="col-md-5">

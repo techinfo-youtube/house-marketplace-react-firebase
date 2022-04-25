@@ -4,7 +4,6 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useParams, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { async } from "@firebase/util";
 
 const Contact = () => {
   const [message, setMessage] = useState("");
