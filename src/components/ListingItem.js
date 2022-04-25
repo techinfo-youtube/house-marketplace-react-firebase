@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBed, FaBath } from "react-icons/fa";
-const ListingItem = ({ listing, id }) => {
+const ListingItem = ({ listing, id, onDelete }) => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center">
-        <div className="card category-link" style={{ width: "800px" }}>
+        <div className="card category-link mb-2" style={{ width: "800px" }}>
           <Link to={`/category/${listing.type}/${id}`}>
             <div className="row container p-2">
               <div className="col-md-5">
@@ -42,6 +42,16 @@ const ListingItem = ({ listing, id }) => {
               </div>
             </div>
           </Link>
+          <div>
+            {onDelete && (
+              <button
+                className="btn btn-danger"
+                onClick={() => onDelete(listing.id)}
+              >
+                Delete Listing
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </>

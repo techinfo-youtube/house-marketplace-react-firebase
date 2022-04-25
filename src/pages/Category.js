@@ -35,6 +35,7 @@ const Category = () => {
         );
         //execute query
         const querySnap = await getDocs(q);
+
         const listings = [];
         querySnap.forEach((doc) => {
           return listings.push({
@@ -52,6 +53,7 @@ const Category = () => {
     //func call
     fetchListing();
   }, [params.categoryName]);
+
   return (
     <Layout>
       <div className="mt-3 container-fluid">

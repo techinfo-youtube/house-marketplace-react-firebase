@@ -83,7 +83,7 @@ const Slider = () => {
                 <img
                   src={data.imgUrls[0]}
                   height={400}
-                  width={800}
+                  width={1100}
                   alt={data.name}
                 />
               </SwiperSlide>
