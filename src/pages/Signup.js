@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Layout from "./../components/Layout/Layout";
+import { toast } from "react-toastify";
 import { BsFillEyeFill } from "react-icons/bs";
 import {
   getAuth,
@@ -9,6 +10,7 @@ import {
 } from "firebase/auth";
 import { db } from "../firebase.config";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import OAuth from "../components/OAuth";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -42,10 +44,11 @@ const Signup = () => {
       delete formDataCopy.password;
       formDataCopy.timestamp = serverTimestamp();
       await setDoc(doc(db, "users", user.uid), formDataCopy);
+      toast.success("Signup Successfully !");
       navigate("/");
-      alert("Signup SUccess");
     } catch (error) {
       console.log(error);
+      toast.error("Something Went Wrong");
     }
   };
   return (
@@ -105,7 +108,7 @@ const Signup = () => {
             Sign up
           </button>
           <div>
-            <h6>Login with Google</h6>
+            <OAuth />
             <span>Already User</span> <Link to="/signin">Login</Link>
           </div>
         </form>
