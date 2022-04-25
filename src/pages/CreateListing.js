@@ -177,12 +177,11 @@ const CreateListing = () => {
     };
     formData.location = address;
     delete formDataCopy.images;
-    delete formDataCopy.address;
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
     const docRef = await addDoc(collection(db, "listings"), formDataCopy);
-    setLoading(false);
     toast.success("Listing Created!");
-    navigate(`/categoryName/${formDataCopy.type}/${docRef.id}`);
+    setLoading(false);
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`);
   };
   return (
     <Layout>
